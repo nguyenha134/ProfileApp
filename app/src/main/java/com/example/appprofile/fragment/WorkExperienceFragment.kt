@@ -1,4 +1,4 @@
-package com.example.appprofile.Fragment
+package com.example.appprofile.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appprofile.Adapter.EducationLevelAdapter
-import com.example.appprofile.Adapter.WorkExperienceAdapter
-import com.example.appprofile.Model.EducationLevel
-import com.example.appprofile.Model.WorkExperience
+import com.example.appprofile.adapter.WorkExperienceAdapter
+import com.example.appprofile.model.WorkExperience
 import com.example.appprofile.R
 import kotlinx.android.synthetic.main.fragment_work_experience.*
 
@@ -79,8 +77,7 @@ class WorkExperienceFragment : Fragment() {
         getUserData()
 
         btnHome.setOnClickListener {
-            val action = WorkExperienceFragmentDirections.actionWorkExperienceFragmentToHomeFragment()
-            findNavController().navigate(action)
+            findNavController().navigate(R.id.action_workExperienceFragment_to_homeFragment)
         }
     }
 

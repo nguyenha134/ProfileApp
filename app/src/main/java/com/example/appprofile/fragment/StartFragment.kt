@@ -1,4 +1,4 @@
-package com.example.appprofile.Fragment
+package com.example.appprofile.fragment
 
 import android.os.Bundle
 import android.os.Handler
@@ -15,12 +15,13 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Handler().postDelayed({
-            findNavController().navigate(R.id.action_startFragment_to_homeFragment)
-        }, 3000)
-
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_start, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Handler().postDelayed({
+            findNavController().navigate(R.id.action_startFragment_to_homeFragment)
+        }, 3000)
+    }
 }

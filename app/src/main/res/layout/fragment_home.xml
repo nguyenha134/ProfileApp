@@ -6,7 +6,7 @@
     <data>
         <variable
             name="user"
-            type="com.example.appprofile.Model.User" />
+            type="com.example.appprofile.model.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/my_color_gradient"
         android:padding="8dp"
-        tools:context=".Fragment.HomeFragment">
+        tools:context=".fragment.HomeFragment">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivMyImage"
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="nữ"
+            android:text="@{user.sex}"
             android:textSize="20sp"
             app:layout_constraintLeft_toRightOf="@+id/tvTitleSex"
             app:layout_constraintTop_toBottomOf="@+id/tvContentName" />
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="13/04/2001"
+            android:text="@{user.birthday}"
             android:textSize="20sp"
             app:layout_constraintLeft_toRightOf="@+id/tvTitleBirthday"
             app:layout_constraintTop_toBottomOf="@+id/tvContentSex" />
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="0358604666"
+            android:text="@{user.phoneNumber}"
             android:textSize="20sp"
             app:layout_constraintLeft_toRightOf="@+id/tvTitlePhoneNumber"
             app:layout_constraintTop_toBottomOf="@+id/tvContentBirthDay" />
@@ -132,7 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="Hưng Yên"
+            android:text="@{user.homeTown}"
             android:textSize="20sp"
             app:layout_constraintLeft_toRightOf="@+id/tvTitleHomeTown"
             app:layout_constraintTop_toBottomOf="@+id/tvContentPhoneNumber" />
@@ -154,7 +154,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="đá cầu, cầu lông...."
+            android:text="@{user.hobby}"
             android:textSize="20sp"
             app:layout_constraintLeft_toRightOf="@+id/tvTitleHobby"
             app:layout_constraintTop_toBottomOf="@+id/tvContentHomeTown" />
@@ -176,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="nguyenthuha1342001@gmail.com"
+            android:text="@{user.email}"
             android:textSize="20sp"
             app:layout_constraintLeft_toRightOf="@+id/tvTitleEmail"
             app:layout_constraintTop_toBottomOf="@+id/tvContentHobby" />
@@ -198,7 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="https://www.facebook.com/profile.php?id=100006607638182"
+            android:text="@{user.facebook}"
             android:textSize="20sp"
             app:layout_constraintLeft_toRightOf="@+id/tvTitleFaceBook"
             app:layout_constraintTop_toBottomOf="@+id/tvContentyEmail" />

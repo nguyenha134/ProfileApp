@@ -1,11 +1,11 @@
-package com.example.appprofile.Adapter
+package com.example.appprofile.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appprofile.Model.WorkExperience
+import com.example.appprofile.model.WorkExperience
 import com.example.appprofile.R
 
 class WorkExperienceAdapter(private val lstKnlm:ArrayList<WorkExperience>) : RecyclerView.Adapter<WorkExperienceAdapter.MyViewHolder>() {
