@@ -1,0 +1,13 @@
+
+<resources>
+    <string name="app_name">Ứng dụng Profile:</string>
+    <string name="my_name">Họ và tên:</string>
+    <string name="my_sex">Giói tính:</string>
+    <string name="my_birthday">Ngày sinh:</string>
+    <string name="phone_number">Số điện thoại:</string>
+    <string name="home_town">Quê quán:</string>
+    <string name="hobby">Sở thích:</string>
+    <string name="email">Email:</string>
+    <string name="facebook">Facebook:</string>
+
+</resources>

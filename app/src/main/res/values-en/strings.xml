@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Appp Profile:</string>
+    <string name="my_name">Name:</string>
+    <string name="my_sex">Sex:</string>
+    <string name="my_birthday">Birthday:</string>
+    <string name="phone_number">PhoneNumber:</string>
+    <string name="home_town">HomeTown:</string>
+    <string name="hobby">Hobby: </string>
+    <string name="email">Email: </string>
+    <string name="facebook">Facebook:</string>
+</resources>

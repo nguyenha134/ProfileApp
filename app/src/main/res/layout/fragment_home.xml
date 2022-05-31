@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.appprofile.Model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/my_color_gradient"
+        android:padding="8dp"
+        tools:context=".Fragment.HomeFragment">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivMyImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/img1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvTitleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/my_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivMyImage" />
+
+        <TextView
+            android:id="@+id/tvContentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@{user.name}"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/tvTitleName"
+            app:layout_constraintTop_toBottomOf="@+id/ivMyImage" />
+
+        <TextView
+            android:id="@+id/tvTitleSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/my_sex"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleName" />
+
+        <TextView
+            android:id="@+id/tvContentSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="nữ"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/tvTitleSex"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentName" />
+
+        <TextView
+            android:id="@+id/tvTitleBirthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/my_birthday"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvContentSex" />
+
+        <TextView
+            android:id="@+id/tvContentBirthDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="13/04/2001"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/tvTitleBirthday"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentSex" />
+
+        <TextView
+            android:id="@+id/tvTitlePhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/phone_number"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleBirthday" />
+
+        <TextView
+            android:id="@+id/tvContentPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="0358604666"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/tvTitlePhoneNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentBirthDay" />
+
+        <TextView
+            android:id="@+id/tvTitleHomeTown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/home_town"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitlePhoneNumber" />
+
+        <TextView
+            android:id="@+id/tvContentHomeTown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Hưng Yên"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/tvTitleHomeTown"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentPhoneNumber" />
+
+        <TextView
+            android:id="@+id/tvTitleHobby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/hobby"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleHomeTown" />
+
+        <TextView
+            android:id="@+id/tvContentHobby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="đá cầu, cầu lông...."
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/tvTitleHobby"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentHomeTown" />
+
+        <TextView
+            android:id="@+id/tvTitleEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/email"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleHobby" />
+
+        <TextView
+            android:id="@+id/tvContentyEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="nguyenthuha1342001@gmail.com"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/tvTitleEmail"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentHobby" />
+
+        <TextView
+            android:id="@+id/tvTitleFaceBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/facebook"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleEmail" />
+
+        <TextView
+            android:id="@+id/tvContentyFaceBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="https://www.facebook.com/profile.php?id=100006607638182"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/tvTitleFaceBook"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentyEmail" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/blue"
+            android:text="Next"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvContentyFaceBook" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
