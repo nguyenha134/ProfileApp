@@ -1,94 +1,59 @@
 package com.example.appprofile.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appprofile.Constants
 import com.example.appprofile.adapter.WorkExperienceAdapter
 import com.example.appprofile.model.WorkExperience
 import com.example.appprofile.R
+import com.example.appprofile.databinding.FragmentWorkExperienceBinding
+import com.example.appprofile.model.User
 import kotlinx.android.synthetic.main.fragment_work_experience.*
 
 class WorkExperienceFragment : Fragment() {
     private lateinit var newRecyclerView: RecyclerView
     private lateinit var newArrayList: ArrayList<WorkExperience>
     lateinit var nameCompany: Array<String>
-    lateinit var position : Array<String>
-    lateinit var description : Array<String>
+    lateinit var position: Array<String>
+    lateinit var description: Array<String>
+    private lateinit var binding: FragmentWorkExperienceBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_work_experience, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_work_experience, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val data:User = arguments?.getSerializable(Constants.BundleKey.KEY_USER) as User
 
-        nameCompany = arrayOf(
-            "ThaiDetox",
-            "CMC Global",
-            "Misa",
-            "Namas",
-            "FPT"
+        val companies = arrayListOf(
+            data.thaiDetoxCompany,
+            data.cmcGlobalCompany,
+            data.misaCompany,
+            data.namasCompany,
+            data.fptCompany
         )
-
-        position = arrayOf(
-            "Marketing",
-            "Android Developer",
-            "Android Developer",
-            "Marketing",
-            "Android Developer"
-        )
-
-        description = arrayOf(
-            "- Viết bài SEO website\n" +
-                    "- Chăm sóc khách hàng\n" +
-                    "- Bán sản phẩm",
-            "- Thiết kế và phát triển các phần mềm và ứng dụng nâng cao cho nền tảng Android.\n" +
-                    "- Xử lý nguồn dữ liệu bên ngoài và API.\n" +
-                    "- Phát hiện và sửa lỗi trên phần mềm.\n" +
-                    "- Thực hiện các công việc để đảm bảo hiệu suất hoạt động, chất lượng và độ phản hồi tốt nhất của ứng dụng.",
-
-            "- Thiết kế và phát triển các phần mềm và ứng dụng nâng cao cho nền tảng Android.\n" +
-                    "- Xử lý nguồn dữ liệu bên ngoài và API.\n" +
-                    "- Phát hiện và sửa lỗi trên phần mềm.\n" +
-                    "- Thực hiện các công việc để đảm bảo hiệu suất hoạt động, chất lượng và độ phản hồi tốt nhất của ứng dụng.",
-            "- Viết bài SEO website\n" +
-                    "- Chăm sóc khách hàng\n" +
-                    "- Bán sản phẩm",
-            "- Thiết kế và phát triển các phần mềm và ứng dụng nâng cao cho nền tảng Android.\n" +
-                    "- Xử lý nguồn dữ liệu bên ngoài và API.\n" +
-                    "- Phát hiện và sửa lỗi trên phần mềm.\n" +
-                    "- Thực hiện các công việc để đảm bảo hiệu suất hoạt động, chất lượng và độ phản hồi tốt nhất của ứng dụng.",
-        )
-
         newRecyclerView = view.findViewById(R.id.rcvLv)
         newRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         newRecyclerView.setHasFixedSize(true)
-
-        newArrayList = arrayListOf<WorkExperience>()
-        getUserData()
+        newRecyclerView.adapter = WorkExperienceAdapter(companies)
 
         btnHome.setOnClickListener {
             findNavController().navigate(R.id.action_workExperienceFragment_to_homeFragment)
         }
-    }
-
-    private fun getUserData() {
-
-        for (i in nameCompany.indices) {
-            val workExperience = WorkExperience(nameCompany[i], position[i], description[i])
-            newArrayList.add(workExperience)
-        }
-
-        newRecyclerView.adapter = WorkExperienceAdapter(newArrayList)
     }
 
 }

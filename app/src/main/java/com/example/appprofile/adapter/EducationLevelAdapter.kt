@@ -8,12 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.appprofile.model.EducationLevel
 import com.example.appprofile.R
 
-
 class EducationLevelAdapter(private val lstHv: ArrayList<EducationLevel>) :
     RecyclerView.Adapter<EducationLevelAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.dong_hocvan, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_education, parent, false)
         return MyViewHolder(itemView)
     }
 
@@ -30,8 +29,5 @@ class EducationLevelAdapter(private val lstHv: ArrayList<EducationLevel>) :
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvNameSchool: TextView = view.findViewById(R.id.tvNameSchool)
         val tvCertificate: TextView = view.findViewById(R.id.tvCertificate)
-
     }
-
-
 }

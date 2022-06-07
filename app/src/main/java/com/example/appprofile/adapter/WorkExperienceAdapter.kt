@@ -16,7 +16,7 @@ class WorkExperienceAdapter(private val lstKnlm:ArrayList<WorkExperience>) : Rec
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        var itemView = LayoutInflater.from(parent.context).inflate(R.layout.dong_knlv, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_knlv, parent, false)
         return MyViewHolder(itemView)
     }
 
